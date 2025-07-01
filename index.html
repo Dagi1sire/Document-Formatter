@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Formatter to PDF</title>
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Text Formatter & PDF Generator</h1>
+
+    <div class="controls">
+        <input type="text" id="bg-image-url" placeholder="Direct Image URL for background">
+        <button id="set-bg-button">Set Background from URL</button>
+    </div>
+
+    <hr>
+
+    <h2>Unsplash Image Search</h2>
+    <div class="controls">
+        <input type="text" id="unsplash-api-key" placeholder="Your Unsplash API Key">
+        <input type="text" id="unsplash-search-query" placeholder="Search Unsplash...">
+        <button id="unsplash-search-button">Search Images</button>
+    </div>
+    <div id="unsplash-results">
+        <!-- Unsplash images will be displayed here -->
+    </div>
+
+    <hr>
+
+    <div id="content-to-pdf">
+        <div id="editor">
+            <p>Hello World! Start typing here...</p>
+            <p>Add some <strong>formatting</strong> and maybe an <em>image</em> later.</p>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button id="generate-pdf-button">Generate PDF</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

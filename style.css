@@ -1,0 +1,143 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+.controls {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.controls input[type="text"] {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 300px;
+}
+
+.controls button {
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.controls button:hover {
+    background-color: #2980b9;
+}
+
+hr {
+    margin: 30px 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 30px;
+}
+
+#unsplash-results {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px dashed #eee;
+    min-height: 100px;
+    background-color: #f9f9f9;
+}
+
+.unsplash-image-container {
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,0.05);
+}
+
+.unsplash-image-container img {
+    max-width: 150px;
+    max-height: 150px;
+    display: block;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+.unsplash-image-container button {
+    padding: 5px 8px;
+    font-size: 0.8em;
+    margin: 2px;
+}
+
+.unsplash-image-container button:hover {
+    opacity: 0.8;
+}
+
+.loading-message, .error-message {
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+.loading-message {
+    color: #2980b9;
+}
+
+.error-message {
+    color: #c0392b;
+    background-color: #fdd;
+    border: 1px solid #c0392b;
+}
+
+#content-to-pdf {
+    width: 800px; /* Standard A4-like width, adjust as needed */
+    min-height: 600px; /* Give some space for editing */
+    margin: 30px auto; /* Increased top/bottom margin */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    background-size: cover;
+    background-position: center;
+}
+
+#editor {
+    min-height: 500px; /* Make editor area substantial */
+    background-color: transparent; /* Ensure editor background doesn't obscure #content-to-pdf background */
+}
+
+/* Quill editor's default styling might need some overrides if they conflict */
+.ql-editor {
+    min-height: 500px;
+    font-size: 16px; /* Default font size for content */
+    background-color: transparent !important; /* Override Quill's potential white background */
+}
+
+.ql-toolbar {
+    background-color: #f9f9f9;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+/* Ensure the container for Quill toolbar and editor is also transparent if needed */
+.ql-container.ql-snow {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    background-color: transparent !important;
+}
