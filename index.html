@@ -3,46 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Formatter to PDF</title>
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet">
+    <title>AI Text Formatter</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Text Formatter & PDF Generator</h1>
+    <div class="container">
+        <header>
+            <h1>AI Text Formatter</h1>
+            <div class="api-key-section">
+                <label for="api-key">Gemini API Key:</label>
+                <input type="password" id="api-key" placeholder="Enter your Gemini API Key">
+                <p class="api-key-notice">Your API key is stored in session storage and used only for calls to Google's Gemini API.</p>
+            </div>
+        </header>
 
-    <div class="controls">
-        <input type="text" id="bg-image-url" placeholder="Direct Image URL for background">
-        <button id="set-bg-button">Set Background from URL</button>
+        <main>
+            <div class="input-section">
+                <h2>Input Text</h2>
+                <textarea id="input-text" placeholder="Enter your text here..."></textarea>
+            </div>
+
+            <div class="actions-section">
+                <h2>Choose Action</h2>
+                <button class="action-button" data-action="improve">Improve General Text</button>
+                <button class="action-button" data-action="linkedin">Format for LinkedIn</button>
+                <button class="action-button" data-action="twitter">Format for Twitter/X (Single Tweet)</button>
+                <!-- Add more actions here as needed -->
+            </div>
+
+            <div class="output-section">
+                <h2>Formatted Output</h2>
+                <div id="output-text-container">
+                    <pre id="output-text"></pre>
+                </div>
+                <button id="copy-output-button">Copy to Clipboard</button>
+                <p id="status-message"></p>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 AI Text Formatter</p>
+        </footer>
     </div>
-
-    <hr>
-
-    <h2>Unsplash Image Search</h2>
-    <div class="controls">
-        <input type="text" id="unsplash-api-key" placeholder="Your Unsplash API Key">
-        <input type="text" id="unsplash-search-query" placeholder="Search Unsplash...">
-        <button id="unsplash-search-button">Search Images</button>
-    </div>
-    <div id="unsplash-results">
-        <!-- Unsplash images will be displayed here -->
-    </div>
-
-    <hr>
-
-    <div id="content-to-pdf">
-        <div id="editor">
-            <p>Hello World! Start typing here...</p>
-            <p>Add some <strong>formatting</strong> and maybe an <em>image</em> later.</p>
-        </div>
-    </div>
-
-    <div class="controls">
-        <button id="generate-pdf-button">Generate PDF</button>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

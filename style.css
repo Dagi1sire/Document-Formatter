@@ -1,143 +1,199 @@
+/* General Reset & Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     line-height: 1.6;
+    background-color: #f7f9fc;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
-h1 {
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 900px;
+}
+
+header {
     text-align: center;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 20px;
+}
+
+header h1 {
     color: #2c3e50;
+    font-size: 2em;
+    margin-bottom: 10px;
 }
 
-.controls {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.controls input[type="text"] {
+.api-key-section {
+    margin-top: 15px;
     padding: 10px;
-    margin-right: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: 300px;
+    background-color: #f0f4f8;
+    border-radius: 6px;
+    font-size: 0.9em;
 }
 
-.controls button {
-    padding: 10px 15px;
+.api-key-section label {
+    font-weight: bold;
+    margin-right: 8px;
+}
+
+.api-key-section input[type="password"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 250px;
+}
+
+.api-key-notice {
+    font-size: 0.8em;
+    color: #555;
+    margin-top: 5px;
+}
+
+/* Main Content Layout */
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+/* Input, Actions, Output Sections */
+.input-section, .actions-section, .output-section {
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+}
+
+h2 {
+    font-size: 1.4em;
+    color: #34495e;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+}
+
+textarea#input-text {
+    width: 100%;
+    min-height: 150px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1em;
+    resize: vertical;
+}
+
+.actions-section .action-button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 10px;
     background-color: #3498db;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 1em;
+    transition: background-color 0.2s ease;
 }
 
-.controls button:hover {
+.actions-section .action-button:hover {
     background-color: #2980b9;
 }
 
-hr {
-    margin: 30px 0;
-    border: 0;
-    border-top: 1px solid #ddd;
+.actions-section .action-button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
 }
 
-h2 {
-    text-align: center;
-    color: #333;
-    margin-top: 30px;
-}
-
-#unsplash-results {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 15px;
-    padding: 10px;
-    border: 1px dashed #eee;
-    min-height: 100px;
+#output-text-container {
     background-color: #f9f9f9;
-}
-
-.unsplash-image-container {
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: #fff;
-    text-align: center;
-    box-shadow: 0 0 5px rgba(0,0,0,0.05);
-}
-
-.unsplash-image-container img {
-    max-width: 150px;
-    max-height: 150px;
-    display: block;
-    margin-bottom: 5px;
-    cursor: pointer;
-}
-
-.unsplash-image-container button {
-    padding: 5px 8px;
-    font-size: 0.8em;
-    margin: 2px;
-}
-
-.unsplash-image-container button:hover {
-    opacity: 0.8;
-}
-
-.loading-message, .error-message {
-    text-align: center;
-    padding: 10px;
-    margin-top: 10px;
+    border: 1px solid #e0e0e0;
     border-radius: 4px;
+    padding: 15px;
+    min-height: 150px;
+    white-space: pre-wrap; /* Preserve line breaks and spaces */
+    word-wrap: break-word; /* Break long words */
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.95em;
+    color: #2c3e50;
 }
 
-.loading-message {
-    color: #2980b9;
+#output-text { /* The actual <pre> tag */
+    margin: 0; /* Reset margin if any from user-agent stylesheet */
 }
 
-.error-message {
-    color: #c0392b;
-    background-color: #fdd;
-    border: 1px solid #c0392b;
+
+#copy-output-button {
+    display: inline-block;
+    padding: 10px 15px;
+    margin-top: 15px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease;
 }
 
-#content-to-pdf {
-    width: 800px; /* Standard A4-like width, adjust as needed */
-    min-height: 600px; /* Give some space for editing */
-    margin: 30px auto; /* Increased top/bottom margin */
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    background-size: cover;
-    background-position: center;
+#copy-output-button:hover {
+    background-color: #27ae60;
 }
 
-#editor {
-    min-height: 500px; /* Make editor area substantial */
-    background-color: transparent; /* Ensure editor background doesn't obscure #content-to-pdf background */
+#status-message {
+    margin-top: 10px;
+    font-size: 0.9em;
+    min-height: 1.2em; /* Reserve space to prevent layout shifts */
 }
 
-/* Quill editor's default styling might need some overrides if they conflict */
-.ql-editor {
-    min-height: 500px;
-    font-size: 16px; /* Default font size for content */
-    background-color: transparent !important; /* Override Quill's potential white background */
+.status-loading {
+    color: #3498db;
 }
 
-.ql-toolbar {
-    background-color: #f9f9f9;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
+.status-success {
+    color: #2ecc71;
 }
 
-/* Ensure the container for Quill toolbar and editor is also transparent if needed */
-.ql-container.ql-snow {
-    border-bottom-left-radius: 4px;
-    border-bottom-right-radius: 4px;
-    background-color: transparent !important;
+.status-error {
+    color: #e74c3c;
+}
+
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .api-key-section input[type="password"] {
+        width: 100%;
+    }
 }
